@@ -1,0 +1,24 @@
+table {
+  width: 100vw;
+}
+
+.create {
+  border: none;
+  box-shadow: 0 0 40px rgba(0, 0, 0, .3);
+  cursor: pointer;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  border-radius: 50%;
+  background-color: #28a745;
+  color: white;
+  height: 60px;
+  width: 60px;
+
+  mat-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

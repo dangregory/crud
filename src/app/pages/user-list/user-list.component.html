@@ -1,0 +1,34 @@
+<!-- <h5>Não ha usuários cadastrados.</h5> -->
+<table #table mat-table [dataSource]="userList" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let user"> {{user.nome}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="sobrenome">
+    <th mat-header-cell *matHeaderCellDef> Sobrenome </th>
+    <td mat-cell *matCellDef="let user"> {{user.sobrenome}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="editar">
+    <th mat-header-cell *matHeaderCellDef>Editar</th>
+    <td mat-cell *matCellDef="let user">
+      <button [routerLink]="['/user', user.id]" [state]="user" mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<button *ngIf="!bottomReached" [routerLink]="['/user']" class="create">
+  <mat-icon>add</mat-icon>
+</button>
